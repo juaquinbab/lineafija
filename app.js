@@ -89,31 +89,31 @@ client.on('message', async (message) => {
   client.sendMessage(message.from, '¡Hola! 👋 Gracias por comunicarte con John Store. En este momento, nuestra línea de ventas está temporalmente fuera de servicio. \n\n⬇️ Aquí te dejamos dos números para que puedas contactarnos:\n\n*Ventas:* 313 2502527  https://wa.link/ycqy2e \n\n*Soporte:* 321 5759412 https://wa.link/lcgbb8 \n\nUno de nuestros asesores te ayudará con tu requerimiento. 📞✨');
   client.sendMessage(message.from, mediaFilemp3)
 
-  setInterval(() => {
-    console.log('Registros', registro);
-  }, 180000);
+  // setInterval(() => {
+  //   const registro = {};
+  // }, 180000);
 
 
-  // Este codigo verifica que ya se envio el mensaje de bienvenida
-  if (!registro[message.from]) {
-    // client.sendMessage(message.from, '*¡Hola, soy JOHN STORE!* 🙌 \n\n Gracias por ser parte de nuestra familia. 🌟 🛒 Teníamos la línea de WhatsApp 📱 3024572102, pero lamentablemente tuvimos un problema con ella. ¡Pero no te preocupes! ¡Estamos aquí con una NUEVA LÍNEA! 🆕 Ahora nos puedes escribir al 3132502527 para cualquier pedido pendiente ó soporte que necesites.\n\n👉 No olvides guardar las líneas de respaldo de nuestros diferentes asesores. \n\n📲 300-329-00-88\n\n📲 302-457-21-02\n\n📲 313-250-25-27\n\n*Agradecemos tu confianza.');
-    //client.sendMessage(message.from, mediaFilemp4)
-    //client.sendMessage(message.from, mediaFilemp4)
-    //client.sendMessage(message.from, mediaFilepdf)
-    // client.sendMessage(message.from, mediaFilemp3)
+  // // Este codigo verifica que ya se envio el mensaje de bienvenida
+  // if (!registro[message.from]) {
+  //   // client.sendMessage(message.from, '*¡Hola, soy JOHN STORE!* 🙌 \n\n Gracias por ser parte de nuestra familia. 🌟 🛒 Teníamos la línea de WhatsApp 📱 3024572102, pero lamentablemente tuvimos un problema con ella. ¡Pero no te preocupes! ¡Estamos aquí con una NUEVA LÍNEA! 🆕 Ahora nos puedes escribir al 3132502527 para cualquier pedido pendiente ó soporte que necesites.\n\n👉 No olvides guardar las líneas de respaldo de nuestros diferentes asesores. \n\n📲 300-329-00-88\n\n📲 302-457-21-02\n\n📲 313-250-25-27\n\n*Agradecemos tu confianza.');
+  //   //client.sendMessage(message.from, mediaFilemp4)
+  //   //client.sendMessage(message.from, mediaFilemp4)
+  //   //client.sendMessage(message.from, mediaFilepdf)
+  //   // client.sendMessage(message.from, mediaFilemp3)
 
-    registro[message.from] = { etapa: 0, numeroDocumento: '' };
+  //   registro[message.from] = { etapa: 0, numeroDocumento: '' };
 
 
-    return;
-  }
+  //   return;
+  // }
 
-  if (MSGbien !== null) { // Check if MSGbien exists
-    client.sendMessage(message.from, MSGbien);
-    MSGbien = null; // Reset to a falsy value after sending
-  } else {
-    console.log('Error al verificar el mensaje de bienvenida');
-  }
+  // if (MSGbien !== null) { // Check if MSGbien exists
+  //   client.sendMessage(message.from, MSGbien);
+  //   MSGbien = null; // Reset to a falsy value after sending
+  // } else {
+  //   console.log('Error al verificar el mensaje de bienvenida');
+  // }
 
 
 
@@ -128,190 +128,190 @@ client.on('message', async (message) => {
 
 
 
-  switch (registro[message.from].etapa) {
+  // switch (registro[message.from].etapa) {
 
 
 
-    case 0:
-      if (!(message.body.includes("1") || message.body.includes("Escriba 1") || message.body.includes("1 Consulta Virtual")) && message.body !== '2') {
-        //client.sendMessage(message.from, mediaFilemp3)
-        delete registro[message.from];
-        //client.sendMessage(message.from, 'Por favor escribe 1 o 2 para continuar.');
-      } else if (message.body.includes("1") || message.body.includes("escriba 1") || message.body.includes("1 Consulta virtual")) {
-        //client.sendMessage(message.from, mediaFilemp4)
-        //client.sendMessage(message.from, '*Hola* por favor escucha el audio');
-        //registro[message.from].etapa = 40;
-        delete registro[message.from];
-        //delete registro[message.from];
-      } else if (message.body === '2') {
-        //client.sendMessage(message.from, '*Hola*, ¿cómo estás? 😊 Para brindarte una atención más personalizada, te vamos a direcciónar a nuestra *línea de 🛠️ Soporte Técnico* donde unos de 👨🏻‍🔧👨🏻‍🔧 nuestros colaboradores te ayudara con tu requerimiento dale click aquí *NUEVA LINEA SOPORTE* :📲 321-575-9412 \n\n🔜 https://wa.link/xpnyof');
-        //registro[message.from].etapa = 40;
-        delete registro[message.from];
-      }
-      break;
+  //   case 0:
+  //     if (!(message.body.includes("1") || message.body.includes("Escriba 1") || message.body.includes("1 Consulta Virtual")) && message.body !== '2') {
+  //       //client.sendMessage(message.from, mediaFilemp3)
+  //       delete registro[message.from];
+  //       //client.sendMessage(message.from, 'Por favor escribe 1 o 2 para continuar.');
+  //     } else if (message.body.includes("1") || message.body.includes("escriba 1") || message.body.includes("1 Consulta virtual")) {
+  //       //client.sendMessage(message.from, mediaFilemp4)
+  //       //client.sendMessage(message.from, '*Hola* por favor escucha el audio');
+  //       //registro[message.from].etapa = 40;
+  //       delete registro[message.from];
+  //       //delete registro[message.from];
+  //     } else if (message.body === '2') {
+  //       //client.sendMessage(message.from, '*Hola*, ¿cómo estás? 😊 Para brindarte una atención más personalizada, te vamos a direcciónar a nuestra *línea de 🛠️ Soporte Técnico* donde unos de 👨🏻‍🔧👨🏻‍🔧 nuestros colaboradores te ayudara con tu requerimiento dale click aquí *NUEVA LINEA SOPORTE* :📲 321-575-9412 \n\n🔜 https://wa.link/xpnyof');
+  //       //registro[message.from].etapa = 40;
+  //       delete registro[message.from];
+  //     }
+  //     break;
 
 
-    case 13:
-      if (!(message.body.toLowerCase() === "si" || message.body.toLowerCase() === "no")) {
-        //client.sendMessage(message.from, 'Por favor escribe si o no para continuar.');
-        delete registro[message.from];
-      } else if (message.body.toLowerCase() === "si" || message.body.toLowerCase() === "no") {
-        const fileName3 = `${message.from}.json`;
-        if (fs.existsSync(fileName3)) {
-          // Cargar el archivo JSON
-          const data = fs.readFileSync(fileName3, 'utf8');
-          let jsonData = JSON.parse(data);
+  //   case 13:
+  //     if (!(message.body.toLowerCase() === "si" || message.body.toLowerCase() === "no")) {
+  //       //client.sendMessage(message.from, 'Por favor escribe si o no para continuar.');
+  //       delete registro[message.from];
+  //     } else if (message.body.toLowerCase() === "si" || message.body.toLowerCase() === "no") {
+  //       const fileName3 = `${message.from}.json`;
+  //       if (fs.existsSync(fileName3)) {
+  //         // Cargar el archivo JSON
+  //         const data = fs.readFileSync(fileName3, 'utf8');
+  //         let jsonData = JSON.parse(data);
 
-          // Actualizar la etapa en el registro
-          registro[message.from].etapa = 20;
+  //         // Actualizar la etapa en el registro
+  //         registro[message.from].etapa = 20;
 
-          // Agregar información según la respuesta
-          if (message.body.toLowerCase() === "si") {
-            jsonData.sintomas = "" + message.body;
-          } else {
-            jsonData.sintomas = "No tiene sintomas.";
-          }
+  //         // Agregar información según la respuesta
+  //         if (message.body.toLowerCase() === "si") {
+  //           jsonData.sintomas = "" + message.body;
+  //         } else {
+  //           jsonData.sintomas = "No tiene sintomas.";
+  //         }
 
-          // Guardar los cambios en el archivo JSON
-          fs.writeFileSync(fileName3, JSON.stringify(jsonData));
+  //         // Guardar los cambios en el archivo JSON
+  //         fs.writeFileSync(fileName3, JSON.stringify(jsonData));
 
-          console.log('Guardado', 'Se ha guardado la información correctamente.');
-        } else {
-          console.log('Guardado', 'No se ha guardado la información correctamente.');
-        }
-        client.sendMessage(message.from, 'Se ha realizado alguno de estos exámenes\n\n✳️ Endoscopia \n\n✳️ Prueba de aliento para Helicobacter pylori \n\n✳️ Análisis de sangre\n\nEscriba *SI o NO*');
-      }
-      break;
-
-
-
-
-      case 20:
-        if (!(message.body.toLowerCase() === "si" || message.body.toLowerCase() === "no")) {
-          client.sendMessage(message.from, 'Por favor escribe si o no para continuar.');
-        } else if (message.body.toLowerCase() === "si" ) {
-          const fileName = `${message.from}.json`;
-        if (fs.existsSync(fileName)) {
-          // Cargar el archivo JSON
-          const data = fs.readFileSync(fileName, 'utf8');
-          let jsonData = JSON.parse(data);
-
-          // Actualizar la etapa en el registro
-          registro[message.from].etapa = 21;
-
-          // Agregar información según la respuesta
-          if (message.body.toLowerCase() === "si") {
-            jsonData.examenRealizado = "" + message.body;
-          } else {
-            jsonData.examenRealizado = "No tiene examenes.";
-          }
-
-          // Guardar los cambios en el archivo JSON
-          fs.writeFileSync(fileName, JSON.stringify(jsonData));
-
-          console.log('Guardado', 'Se ha guardado la información correctamente.');
-        } else {
-          console.log('Guardado', 'No se ha guardado la información correctamente.');
-        }
-      }
-        if (message.body.toLowerCase() === 'si') {
-          client.sendMessage(message.from, 'Prioriza tu salud con nuestros tratamiento, garantizando una recuperación pronta. \n\nNuestros tratamientos oxilan, en un precio entre 199.000 y 499.999! \n\nRecupera tu bienestar y vive mejor. ¿Deseas continuar?\n\nEscriba *SI o NO*');
-        } 
-        break;
+  //         console.log('Guardado', 'Se ha guardado la información correctamente.');
+  //       } else {
+  //         console.log('Guardado', 'No se ha guardado la información correctamente.');
+  //       }
+  //       client.sendMessage(message.from, 'Se ha realizado alguno de estos exámenes\n\n✳️ Endoscopia \n\n✳️ Prueba de aliento para Helicobacter pylori \n\n✳️ Análisis de sangre\n\nEscriba *SI o NO*');
+  //     }
+  //     break;
 
 
 
-      case 21:
-        if (!(message.body.toLowerCase() === "si" || message.body.toLowerCase() === "no")) {
-          client.sendMessage(message.from, 'Por favor escribe si o no para continuar.');
-        } else if (message.body.toLowerCase() === "si" || message.body.toLowerCase() === "no") {
-          const fileName = `${message.from}.json`;
-          if (fs.existsSync(fileName)) {
-            // Cargar el archivo JSON
-            const data = fs.readFileSync(fileName, 'utf8');
-            let jsonData = JSON.parse(data);
+
+  //     case 20:
+  //       if (!(message.body.toLowerCase() === "si" || message.body.toLowerCase() === "no")) {
+  //         client.sendMessage(message.from, 'Por favor escribe si o no para continuar.');
+  //       } else if (message.body.toLowerCase() === "si" ) {
+  //         const fileName = `${message.from}.json`;
+  //       if (fs.existsSync(fileName)) {
+  //         // Cargar el archivo JSON
+  //         const data = fs.readFileSync(fileName, 'utf8');
+  //         let jsonData = JSON.parse(data);
+
+  //         // Actualizar la etapa en el registro
+  //         registro[message.from].etapa = 21;
+
+  //         // Agregar información según la respuesta
+  //         if (message.body.toLowerCase() === "si") {
+  //           jsonData.examenRealizado = "" + message.body;
+  //         } else {
+  //           jsonData.examenRealizado = "No tiene examenes.";
+  //         }
+
+  //         // Guardar los cambios en el archivo JSON
+  //         fs.writeFileSync(fileName, JSON.stringify(jsonData));
+
+  //         console.log('Guardado', 'Se ha guardado la información correctamente.');
+  //       } else {
+  //         console.log('Guardado', 'No se ha guardado la información correctamente.');
+  //       }
+  //     }
+  //       if (message.body.toLowerCase() === 'si') {
+  //         client.sendMessage(message.from, 'Prioriza tu salud con nuestros tratamiento, garantizando una recuperación pronta. \n\nNuestros tratamientos oxilan, en un precio entre 199.000 y 499.999! \n\nRecupera tu bienestar y vive mejor. ¿Deseas continuar?\n\nEscriba *SI o NO*');
+  //       } 
+  //       break;
+
+
+
+  //     case 21:
+  //       if (!(message.body.toLowerCase() === "si" || message.body.toLowerCase() === "no")) {
+  //         client.sendMessage(message.from, 'Por favor escribe si o no para continuar.');
+  //       } else if (message.body.toLowerCase() === "si" || message.body.toLowerCase() === "no") {
+  //         const fileName = `${message.from}.json`;
+  //         if (fs.existsSync(fileName)) {
+  //           // Cargar el archivo JSON
+  //           const data = fs.readFileSync(fileName, 'utf8');
+  //           let jsonData = JSON.parse(data);
   
-            // Actualizar la etapa en el registro
-            registro[message.from].etapa = 22;
+  //           // Actualizar la etapa en el registro
+  //           registro[message.from].etapa = 22;
   
-            // Agregar información según la respuesta
-            if (message.body.toLowerCase() === "si") {
-              jsonData.examenRealizado = message.body;
-              jsonData.telefono = message.from;
-            } else {
-              jsonData.examenRealizado = "No se ha realizado ningún examen.";
-            }
+  //           // Agregar información según la respuesta
+  //           if (message.body.toLowerCase() === "si") {
+  //             jsonData.examenRealizado = message.body;
+  //             jsonData.telefono = message.from;
+  //           } else {
+  //             jsonData.examenRealizado = "No se ha realizado ningún examen.";
+  //           }
   
-            // Guardar los cambios en el archivo JSON
-            fs.writeFileSync(fileName, JSON.stringify(jsonData));
+  //           // Guardar los cambios en el archivo JSON
+  //           fs.writeFileSync(fileName, JSON.stringify(jsonData));
   
-            console.log('Guardado', 'Se ha guardado la información correctamente.');
-          } else {
-            console.log('Guardado', 'No se ha guardado la información correctamente.'); 
-          }
-          if (message.body.toLowerCase() === 'si') {
-          client.sendMessage(message.from, 'Para Agendar la cita por favor escribe en un solo mensaje \n\nNombre \n\nOcupación \n\n Edad \n\nCiudad \n\nNúmero de Teléfono ');
-        } else if (message.body.toLowerCase() === 'no') {
-          client.sendMessage(message.from, 'La medicina homeopática puede mejorar su salud, lo(a) invitamos a leer esta información.')
-          client.sendMessage(message.from, mediaFilepdf)
-        }
-      }
-        break;
+  //           console.log('Guardado', 'Se ha guardado la información correctamente.');
+  //         } else {
+  //           console.log('Guardado', 'No se ha guardado la información correctamente.'); 
+  //         }
+  //         if (message.body.toLowerCase() === 'si') {
+  //         client.sendMessage(message.from, 'Para Agendar la cita por favor escribe en un solo mensaje \n\nNombre \n\nOcupación \n\n Edad \n\nCiudad \n\nNúmero de Teléfono ');
+  //       } else if (message.body.toLowerCase() === 'no') {
+  //         client.sendMessage(message.from, 'La medicina homeopática puede mejorar su salud, lo(a) invitamos a leer esta información.')
+  //         client.sendMessage(message.from, mediaFilepdf)
+  //       }
+  //     }
+  //       break;
   
 
 
-        case 22:
-          if (message.body.length > 5) {
-            const fileName = `${message.from}.json`;
-            if (fs.existsSync(fileName)) {
-              // Cargar el archivo JSON
-              const data = fs.readFileSync(fileName, 'utf8');
-              let jsonData = JSON.parse(data);
+  //       case 22:
+  //         if (message.body.length > 5) {
+  //           const fileName = `${message.from}.json`;
+  //           if (fs.existsSync(fileName)) {
+  //             // Cargar el archivo JSON
+  //             const data = fs.readFileSync(fileName, 'utf8');
+  //             let jsonData = JSON.parse(data);
         
-              // Actualizar la etapa en el registro
-              registro[message.from].etapa = 23;
+  //             // Actualizar la etapa en el registro
+  //             registro[message.from].etapa = 23;
         
-              // Guardar la respuesta en el JSON
-              jsonData.respuesta = message.body;
+  //             // Guardar la respuesta en el JSON
+  //             jsonData.respuesta = message.body;
         
-              // Guardar los cambios en el archivo JSON
-              fs.writeFileSync(fileName, JSON.stringify(jsonData));
+  //             // Guardar los cambios en el archivo JSON
+  //             fs.writeFileSync(fileName, JSON.stringify(jsonData));
         
-              console.log('Guardado', 'Se ha guardado la información correctamente.');
-            } else {
-              console.log('Guardado', 'No se ha guardado la información correctamente.');
-            }
-            client.sendMessage(message.from, '¡Gracias por tu tiempo y confianza! Estamos aquí para ayudarte en tu camino hacia la salud digestiva. \n\nPronto recibirá una llamada');
+  //             console.log('Guardado', 'Se ha guardado la información correctamente.');
+  //           } else {
+  //             console.log('Guardado', 'No se ha guardado la información correctamente.');
+  //           }
+  //           client.sendMessage(message.from, '¡Gracias por tu tiempo y confianza! Estamos aquí para ayudarte en tu camino hacia la salud digestiva. \n\nPronto recibirá una llamada');
             
-            const fileName2 = `${message.from}.json`;
+  //           const fileName2 = `${message.from}.json`;
 
-            // Verificar si el archivo existe
-            if (fs.existsSync(fileName2)) {
-              // Cargar el archivo JSON
-              const data = fs.readFileSync(fileName2, 'utf8');
-              const jsonData = JSON.parse(data);
+  //           // Verificar si el archivo existe
+  //           if (fs.existsSync(fileName2)) {
+  //             // Cargar el archivo JSON
+  //             const data = fs.readFileSync(fileName2, 'utf8');
+  //             const jsonData = JSON.parse(data);
 
-              const jsonString = JSON.stringify(jsonData, null, 2);
+  //             const jsonString = JSON.stringify(jsonData, null, 2);
             
-              // Utilizar el contenido del archivo JSON en otro lugar
-              // Por ejemplo, imprimirlo en la consola
-              // console.log(jsonData);
+  //             // Utilizar el contenido del archivo JSON en otro lugar
+  //             // Por ejemplo, imprimirlo en la consola
+  //             // console.log(jsonData);
               
-              client.sendMessage('573204037757c.us', jsonString);
+  //             client.sendMessage('573204037757c.us', jsonString);
 
-            } else {
-              console.log('El archivo no existe.');
-            }
+  //           } else {
+  //             console.log('El archivo no existe.');
+  //           }
           
-          }
+  //         }
 
 
-          break;
+  //         break;
   
 
 
 
-  }
+  // }
 
 
 });
