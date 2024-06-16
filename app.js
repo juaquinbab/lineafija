@@ -84,7 +84,7 @@ const registro = {}; // Registra los numeros telefono que inician al programa
 
 
 client.on('message', async (message) => {
-  console.log(`Mensaje recibido de ${message.from}: ${message.body}`);
+  // console.log(`Mensaje recibido de ${message.from}: ${message.body}`);
 
   client.sendMessage(message.from, '¡Hola! 👋 Gracias por comunicarte con John Store. En este momento, nuestra línea de ventas está temporalmente fuera de servicio. \n\n⬇️ Aquí te dejamos dos números para que puedas contactarnos:\n\n*Ventas:* 313 2502527  https://wa.link/ycqy2e \n\n*Soporte:* 321 5759412 https://wa.link/lcgbb8 \n\nUno de nuestros asesores te ayudará con tu requerimiento. 📞✨');
   client.sendMessage(message.from, mediaFilemp3)
